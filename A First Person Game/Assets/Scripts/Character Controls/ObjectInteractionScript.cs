@@ -54,13 +54,5 @@ public class ObjectInteractionScript : MonoBehaviour
                 target.takeDamage(40);
             }
         }
-
-        if (Physics.Raycast(firstPersonCam.transform.position, firstPersonCam.transform.forward, out hitInfo, range)
-            && hitInfo.transform.gameObject.CompareTag("EndTrigger"))
-        {
-            FindAnyObjectByType<AudioManagerScript>().Play("All Items Collected");
-            FindAnyObjectByType<SceneManagerScript>().NextLevel();
-            Debug.Log("You Win. Here is a flower. For you.");
-        }
     }
 }

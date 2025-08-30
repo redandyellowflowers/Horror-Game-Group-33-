@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Interactable
-  - EndTrigger
+  - Computer
   layers:
   - Default
   - TransparentFX

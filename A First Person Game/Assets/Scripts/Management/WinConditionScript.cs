@@ -19,7 +19,7 @@ public class WinConditionScript : MonoBehaviour
     Code version: 1
     */
 
-    public GameObject endOfLevelTrigger;
+    public GameObject levelCompletionScreen;
 
     [Header("Collectable Objects")]
     public GameObject counterTextObject;
@@ -48,10 +48,9 @@ public class WinConditionScript : MonoBehaviour
         objectiveText.gameObject.GetComponent<TextMeshProUGUI>().text = currentObjective;
         counterTextObject.gameObject.GetComponent<TextMeshProUGUI>().text = collectable.Length.ToString();
 
-        if (endOfLevelTrigger != null)
+        if (levelCompletionScreen != null)
         {
-            endOfLevelTrigger.SetActive(false);
-            endOfLevelTrigger.GetComponent<Renderer>().material.color = Color.green;
+            levelCompletionScreen.SetActive(false);
         }
     }
 
@@ -81,10 +80,15 @@ public class WinConditionScript : MonoBehaviour
             objectiveText.gameObject.GetComponent<TextMeshProUGUI>().text = objectiveUponCompletion;
             counterTextObject.gameObject.GetComponent<TextMeshProUGUI>().text = "--".ToString();
 
-            if (endOfLevelTrigger != null)
+            if (levelCompletionScreen != null)
             {
-                endOfLevelTrigger.SetActive(true);
-                endOfLevelTrigger.GetComponent<Renderer>().material.color = Color.green;
+                Time.timeScale = 0;
+                levelCompletionScreen.SetActive(true);
+
+                gameObject.GetComponent<PauseMenuScript>().enabled = false;
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }

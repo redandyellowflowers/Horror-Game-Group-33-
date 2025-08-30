@@ -25,7 +25,7 @@ public class TargetScript : MonoBehaviour
             gameObject.transform.gameObject.tag = "Untagged";
             gameObject.transform.gameObject.GetComponent<Renderer>().material.color = Color.red;
 
-            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            //gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
             FindAnyObjectByType<AudioManagerScript>().Play("Red");
         }
