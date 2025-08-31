@@ -399,7 +399,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cd359c1b-7d1a-4d8e-8836-8667af77ea24"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",

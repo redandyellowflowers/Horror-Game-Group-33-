@@ -362,7 +362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press Any Key To The Start Simulation. '
+  m_text: PRESS ANY KEY TO WAKE UP.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b945b0756e310b845983e80c1721209e, type: 2}
   m_sharedMaterial: {fileID: -4666615043421416973, guid: b945b0756e310b845983e80c1721209e, type: 2}
@@ -371,8 +371,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -655,6 +655,87 @@ MonoBehaviour:
   m_DefaultActionMap: Character Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &911827123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911827125}
+  - component: {fileID: 911827124}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &911827124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911827123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce637ef9cc9730448a22470f487a20f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Background
+    clip: {fileID: 8300000, guid: 06fa9f499622d7f4d9768eaa3ec42bc8, type: 3}
+    volume: 0.4
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Jump
+    clip: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Green & Yellow
+    clip: {fileID: 8300000, guid: 83829ff414f47a048b5387e4ab33571c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Red
+    clip: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: All Items Collected
+    clip: {fileID: 8300000, guid: 634833ffabdc8da4ebd5adfda4636007, type: 3}
+    volume: 0.7
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Death
+    clip: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
+    volume: 0.7
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+--- !u!4 &911827125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911827123}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955945771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,7 +1447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1479,3 +1560,4 @@ SceneRoots:
   - {fileID: 537148903}
   - {fileID: 1555723229}
   - {fileID: 1968126606}
+  - {fileID: 911827125}

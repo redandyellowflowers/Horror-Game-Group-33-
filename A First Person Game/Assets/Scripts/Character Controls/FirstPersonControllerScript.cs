@@ -19,6 +19,7 @@ public class FirstPersonControllerScript : MonoBehaviour
     Availability: https://www.youtube.com/watch?v=oGVbC7ooUWI
     */
 
+    public bool canJump = true;
     public CharacterController controller;
 
     [Header("Base Movement")]
@@ -139,7 +140,7 @@ public class FirstPersonControllerScript : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (isGrounded)
+        if (isGrounded && canJump)
         {
             //Debug.Log("Jump" + context.phase);
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);

@@ -26,6 +26,7 @@ public class AudioManagerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        /*
         if (instance == null)
         {
             instance = this;
@@ -37,6 +38,7 @@ public class AudioManagerScript : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+        */
 
         foreach (SoundScript s in sounds)
         {

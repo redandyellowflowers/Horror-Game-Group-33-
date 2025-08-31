@@ -2462,6 +2462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4449058cffde34447ad5e27854ad2b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canJump: 1
   controller: {fileID: 0}
   speed: 7
   baseSpeed: 7
@@ -13220,7 +13221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cca17e0ee0479845a3d9fdb554c4182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endOfLevelTrigger: {fileID: 975375783}
+  levelCompletionScreen: {fileID: 0}
   counterTextObject: {fileID: 20561466}
   collectable: []
   objectiveText: {fileID: 1629539976}
@@ -13258,6 +13259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17783609d76ae542b72725e1cee0de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStartScreen: 0
   player: {fileID: 0}
   loadingScreen: {fileID: 1426379417}
   progressPercentageText: {fileID: 0}
@@ -15078,6 +15080,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &523891416252279071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166182476742085402}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652944896509
 Transform:
   m_ObjectHideFlags: 0
@@ -15813,6 +15830,55 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4659354177939931364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166182476742085402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce637ef9cc9730448a22470f487a20f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Background
+    clip: {fileID: 8300000, guid: 900ec691aaa57e243b594c847ac6215b, type: 3}
+    volume: 0.4
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Jump
+    clip: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Green & Yellow
+    clip: {fileID: 8300000, guid: 83829ff414f47a048b5387e4ab33571c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Red
+    clip: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: All Items Collected
+    clip: {fileID: 8300000, guid: 634833ffabdc8da4ebd5adfda4636007, type: 3}
+    volume: 0.7
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Death
+    clip: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
+    volume: 0.7
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!1 &4674729191940290619
 GameObject:
   m_ObjectHideFlags: 0
@@ -16350,63 +16416,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9544044df2c6334c88a9868c5d4ca23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &7091037878240175257
-PrefabInstance:
+--- !u!1 &7166182476742085402
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 79668000211283843, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_Name
-      value: Audio Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7290572530938514822, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ca429cbfcb5ab0a498cee1de572b1870, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523891416252279071}
+  - component: {fileID: 4659354177939931364}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!23 &7517088932498235926
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16889,7 +16915,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1786519199}
-  - {fileID: 7091037878240175257}
+  - {fileID: 523891416252279071}
   - {fileID: 1829105689}
   - {fileID: 410087041}
   - {fileID: 832575519}

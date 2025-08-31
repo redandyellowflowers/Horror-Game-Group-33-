@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/2 Desktop, or Main Menu.unity
     guid: 137f1e1e7583acf4cb61d297d03758fd
   - enabled: 1
+    path: Assets/Scenes/3 1rst Level Select.unity
+    guid: fd2c51b4759b14d408d4574e501498be
+  - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 14d23d9776aa0b347ba715753faa00e0
   - enabled: 1
