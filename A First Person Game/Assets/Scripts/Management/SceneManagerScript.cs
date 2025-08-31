@@ -23,6 +23,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public static SceneManagerScript sceneManager;
 
+    public bool isStartScreen = false;
     public GameObject player;
 
     [Header("loading screen ui")]
@@ -34,15 +35,17 @@ public class SceneManagerScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         player = GameObject.FindWithTag("Player");
-    }
 
-    private void Start()
-    {
-        if (player == null)
+        if (player == null && isStartScreen == false)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+    }
+
+    private void Start()
+    {
+
     }
 
     public void NextLevel()

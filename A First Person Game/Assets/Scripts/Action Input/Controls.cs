@@ -153,6 +153,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Any Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ceeb574-9acf-457f-b5e1-ffb046d5b8ce"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -452,6 +461,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Camera Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b9dd45cb-bc4f-4094-8631-8efd505ac815"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Any Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -467,6 +487,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_CharacterControls_Interaction = m_CharacterControls.FindAction("Interaction", throwIfNotFound: true);
         m_CharacterControls_Sprint = m_CharacterControls.FindAction("Sprint", throwIfNotFound: true);
         m_CharacterControls_Pause = m_CharacterControls.FindAction("Pause", throwIfNotFound: true);
+        m_CharacterControls_AnyKey = m_CharacterControls.FindAction("Any Key", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -554,6 +575,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_Interaction;
     private readonly InputAction m_CharacterControls_Sprint;
     private readonly InputAction m_CharacterControls_Pause;
+    private readonly InputAction m_CharacterControls_AnyKey;
     /// <summary>
     /// Provides access to input actions defined in input action map "Character Controls".
     /// </summary>
@@ -593,6 +615,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CharacterControls/Pause".
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_CharacterControls_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "CharacterControls/AnyKey".
+        /// </summary>
+        public InputAction @AnyKey => m_Wrapper.m_CharacterControls_AnyKey;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -640,6 +666,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @AnyKey.started += instance.OnAnyKey;
+            @AnyKey.performed += instance.OnAnyKey;
+            @AnyKey.canceled += instance.OnAnyKey;
         }
 
         /// <summary>
@@ -672,6 +701,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @AnyKey.started -= instance.OnAnyKey;
+            @AnyKey.performed -= instance.OnAnyKey;
+            @AnyKey.canceled -= instance.OnAnyKey;
         }
 
         /// <summary>
@@ -761,5 +793,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Any Key" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAnyKey(InputAction.CallbackContext context);
     }
 }
